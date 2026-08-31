@@ -7,6 +7,7 @@ import { SystemHeader } from '@/components/ololink/system-header';
 
 import { SystemRail } from '@/components/ololink/system-rail';
 import { SystemPanel } from '@/components/ololink/system-panel';
+import { ObjectCard } from '@/components/ololink/object-card';
 
 const MapScene = lazy(() =>
   import('@/components/ololink/map-scene').then((m) => ({ default: m.MapScene }))
