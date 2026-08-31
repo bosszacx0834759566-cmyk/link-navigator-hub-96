@@ -94,7 +94,7 @@ function Storage({ used }: { used: number }) {
 
 function NodeLink({ state, id, label }: { state: OloLinkState; id?: string | undefined; label: string }) {
   const name = id ? ASSET_BY_ID[id]?.name : undefined;
-  if (!name) return <Line label={label} value="No contact" tone="text-muted-foreground" />;
+  if (!id || !name) return <Line label={label} value="No contact" tone="text-muted-foreground" />;
   return (
     <div className="flex items-baseline justify-between border-b border-white/[0.04] py-1.5 last:border-0">
       <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">{label}</span>
