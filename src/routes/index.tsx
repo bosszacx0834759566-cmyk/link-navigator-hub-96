@@ -7,6 +7,7 @@ import { SystemHeader } from '@/components/ololink/system-header';
 
 import { SystemRail } from '@/components/ololink/system-rail';
 import { SystemPanel } from '@/components/ololink/system-panel';
+import { ObjectCard } from '@/components/ololink/object-card';
 
 const MapScene = lazy(() =>
   import('@/components/ololink/map-scene').then((m) => ({ default: m.MapScene }))
@@ -90,6 +91,9 @@ function Explorer() {
 
       {/* LEVEL 3 — slide-out data panel for the active tab */}
       <SystemPanel state={state} />
+
+      {/* LEVEL 4 — inspector for the selected asset / link (shared by 2D and 3D) */}
+      <ObjectCard state={state} />
 
     </div>
   );

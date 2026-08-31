@@ -5,6 +5,7 @@ import { X, Crosshair, ArrowDown } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { ASSET_BY_ID, KIND_META, STATUS_META, TECH_META, type LinkState, type Segment } from '@/lib/ololink';
+import { STORAGE_TB, chainForAsset } from '@/lib/chain';
 import type { OloLinkState } from '@/hooks/use-ololink';
 
 function Line({ label, value, tone }: { label: string; value: string; tone?: string | undefined }) {
@@ -93,7 +94,7 @@ function Storage({ used }: { used: number }) {
 
 function NodeLink({ state, id, label }: { state: OloLinkState; id?: string | undefined; label: string }) {
   const name = id ? ASSET_BY_ID[id]?.name : undefined;
-  if (!name) return <Line label={label} value="No contact" tone="text-muted-foreground" />;
+  if (!id || !name) return <Line label={label} value="No contact" tone="text-muted-foreground" />;
   return (
     <div className="flex items-baseline justify-between border-b border-white/[0.04] py-1.5 last:border-0">
       <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">{label}</span>
