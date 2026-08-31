@@ -422,6 +422,8 @@ export function MapScene({ state }: { state: OloLinkState }) {
                 {selected && (
                   <circle r={11} fill="none" stroke="#e2e8f0" strokeOpacity={0.8} strokeWidth={0.9} />
                 )}
+                {/* invisible hit area so thin glyph strokes stay clickable */}
+                <circle r={10} fill="transparent" stroke="none" />
                 <NodeGlyph kind={a.kind} color={color} />
 
                 {layers.labels && (
