@@ -412,6 +412,7 @@ export function MapScene({ state }: { state: OloLinkState }) {
             return (
               <g
                 key={a.id}
+                data-asset-id={a.id}
                 transform={`translate(${p.x} ${p.y}) scale(${inv})`}
                 className="cursor-pointer"
                 onClick={(e) => {
