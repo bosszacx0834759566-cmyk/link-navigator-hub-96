@@ -417,7 +417,7 @@ export function MapScene({ state }: { state: OloLinkState }) {
                 className="cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation();
-                  console.log("MAPCLICK",a.id,dragged()); if (!dragged()) state.select({ type: 'asset', id: a.id });
+                  if (!dragged()) state.select({ type: 'asset', id: a.id });
                 }}
               >
                 {selected && (
